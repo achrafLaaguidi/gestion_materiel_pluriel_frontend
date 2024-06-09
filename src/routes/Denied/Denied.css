@@ -1,0 +1,9 @@
+
+.denied h1 {
+    color: red;
+}
+
+.denied h6{
+    color: red;
+    text-decoration: underline;
+}
