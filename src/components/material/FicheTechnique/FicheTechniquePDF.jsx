@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
 });
 
 const FicheTechnique = ({ data }) => (
-    <Document>
+    <Document title={`Fiche Technique ${data.id}`}>
         <Page size="A4" style={styles.page}>
             <View style={styles.header}>
                 <Image style={styles.image} src={images.PlurielLogo} />
@@ -107,6 +107,9 @@ const FicheTechnique = ({ data }) => (
                 </Text>
                 <Text style={styles.sectionText}>
                     DATE RETOUR: <Text style={styles.boldBlueText}>{data.releaseDate}</Text>
+                </Text>
+                <Text style={styles.sectionText}>
+                    MONTANT A FACTURER:
                 </Text>
             </View>
             <View style={styles.footer}>

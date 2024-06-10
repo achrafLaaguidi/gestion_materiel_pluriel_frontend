@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 });
 
 const ClientsInfoPDF = ({ data }) => (
-    <Document>
+    <Document title={`Fiche Client ${data.id}`} >
         <Page size="A4" style={styles.page}>
             <View style={styles.header}>
                 <Image style={styles.image} src={images.PlurielLogo} />
@@ -109,7 +109,7 @@ const ClientsInfo = () => {
 
     return (
         <>
-            <PDFViewer style={{ width: '100%', height: '100vh' }} >
+            <PDFViewer style={{ width: '100%', height: '100vh' }}    >
                 <ClientsInfoPDF data={rowData} />
             </PDFViewer>
         </>

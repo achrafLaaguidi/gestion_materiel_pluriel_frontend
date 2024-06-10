@@ -94,8 +94,8 @@ const styles = StyleSheet.create({
 });
 
 const BonDeRetour = ({ data }) => (
-    <Document>
-        <Page size="A4" style={styles.page}>
+    <Document title={`Bon De Retour ${data.id}`}>
+        <Page size="A4" style={styles.page} >
             <View style={styles.header} >
                 <Image style={styles.Image} src={images.PlurielLogo} />
                 <Text style={styles.title}>BON-DE-RETOUR</Text>
@@ -108,7 +108,6 @@ const BonDeRetour = ({ data }) => (
                 <Text style={styles.sectionText}>DATE D'ENTREE: <Text style={styles.boldBlueText}>{data.entryDate}</Text></Text>
                 <Text style={styles.sectionText}>INTERVENTION:</Text>
                 <Text style={styles.textarea}>{data.intervention}</Text>
-                <Text style={styles.sectionText}>DUREE D'INTERVENTION: <Text style={styles.boldBlueText}>{data.dureeIntervention}</Text></Text>
                 <Text style={styles.sectionText}>DATE RETOUR: <Text style={styles.boldBlueText}>{data.releaseDate}</Text></Text>
             </View>
             <View style={styles.signatures}>
