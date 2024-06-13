@@ -70,10 +70,10 @@ export function HistoryUser() {
             name: "ACTION",
             cell: row => (
                 <>
-                    <button className="w-auto" onClick={() => handleModify(row)}>
+                    <button className="w-auto mr-3" onClick={() => handleModify(row)}>
                         <i className="fa-regular fa-pen-to-square"></i>
                     </button>
-                    <button className="w-auto mr-1 btn-light" title='Fiche Technique' onClick={() => navigate("/FicheTechnique", { state: { data: row } })}>
+                    <button className="w-auto mr-3 btn-light" title='Fiche Technique' onClick={() => navigate("/FicheTechnique", { state: { data: row } })}>
                         <i class="fa-solid fa-file-pdf"></i>                    </button>
                     <button className="w-auto  btn-warning" title='Bon De Retour' onClick={() => navigate("/BonDeRetour", { state: { data: row } })}>
                         <i class="fa-regular fa-file-pdf"></i>

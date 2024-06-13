@@ -51,7 +51,7 @@ export const LastMaterialsRepair = () => {
         },
         {
             name: "TECHNICEN",
-            selector: row => row.technician!=null?row.technician.username:"ALL",
+            selector: row => row.technician != null ? row.technician.username : "ALL",
             sortable: true,
             width: '15%'
         },
@@ -69,9 +69,8 @@ export const LastMaterialsRepair = () => {
                         <i className="fa-regular fa-pen-to-square"></i>
                     </button>
                     {(row.releaseDate !== "" && row.releaseDate != null) &&
-                        <button className="w-auto btn-light" onClick={() => handleFiche(row)}>
-                            <i className="fa-regular fa-eye"></i>
-                            FT
+                        <button className="w-auto mr-1 btn-light" title='Fiche Technique' onClick={() => navigate("/FicheTechnique", { state: { data: row } })}>
+                            <i class="fa-solid fa-file-pdf"></i>
                         </button>}
 
                 </>

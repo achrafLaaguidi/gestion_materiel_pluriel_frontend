@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     sectionText: {
-        marginBottom: 10
+        marginBottom: '6mm'
     },
     footer: {
         marginTop: 20,
@@ -100,13 +100,13 @@ const FicheTechnique = ({ data }) => (
                 <Text style={styles.sectionText}>INTERVENTION:</Text>
                 <Text style={styles.textarea}>{data.intervention}</Text>
                 <Text style={styles.sectionText}>
-                    DUREE D'INTERVENTION: <Text style={styles.boldBlueText}>{data.dureeIntervention}</Text> <Text style={styles.boldBlueText}>{data.isGarented ? "[GARENTIE]" : "[HORS GARENTIE]"}</Text>
+                    DUREE D'INTERVENTION: <Text style={styles.boldBlueText}>{data.dureeIntervention}</Text> <Text style={{ color: 'red' }}>{data.isGarented ? "[GARENTIE]" : "[HORS GARENTIE]"}</Text>
                 </Text>
                 <Text style={styles.sectionText}>
-                    CONTRAT: <Text style={styles.boldBlueText}>{(data.client.contract != null && data.client.contract.status === 'ACTIVE') ? data.client.contract.title : "Non Contractuel"}</Text>
+                    CONTRAT: <Text style={styles.boldBlueText}>{(data.client.contract && data.client.contract.status === 'ACTIVE') ? data.client.contract.title : "Non Contractuel"}</Text>
                 </Text>
                 <Text style={styles.sectionText}>
-                    DATE RETOUR: <Text style={styles.boldBlueText}>{data.releaseDate}</Text>
+                    DATE DE RETOUR: <Text style={styles.boldBlueText}>{data.releaseDate}</Text>
                 </Text>
                 <Text style={styles.sectionText}>
                     MONTANT A FACTURER:

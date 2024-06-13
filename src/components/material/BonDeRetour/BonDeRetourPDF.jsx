@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     section: {
+        width: "100%",
         margin: 10,
         padding: 10,
     },
@@ -108,7 +109,12 @@ const BonDeRetour = ({ data }) => (
                 <Text style={styles.sectionText}>DATE D'ENTREE: <Text style={styles.boldBlueText}>{data.entryDate}</Text></Text>
                 <Text style={styles.sectionText}>INTERVENTION:</Text>
                 <Text style={styles.textarea}>{data.intervention}</Text>
-                <Text style={styles.sectionText}>DATE RETOUR: <Text style={styles.boldBlueText}>{data.releaseDate}</Text></Text>
+                <Text style={styles.sectionText}>DATE DE RETOUR:
+                    <Text style={styles.boldBlueText}>{data.releaseDate}</Text>
+                </Text>
+                <Text style={styles.sectionText}>CONTRAT :
+                    <Text style={{ color: 'red', fontWeight: 600 }}>{data.isGarented ? "[GARENTIE]" : (data.client.contract && data.client.contract.status === 'ACTIVE') ? "[" + data.client.contract.title + "]" : "[HORS GARENTIE]"}</Text>
+                </Text>
             </View>
             <View style={styles.signatures}>
                 <View style={styles.signature}>

@@ -2,7 +2,7 @@ import { Routes, Route, Navigate, BrowserRouter, Outlet } from "react-router-dom
 import ProtectedRoutes from "./ProtectedRoutes";
 import LoginPage from "../components/login/LoginPage";
 
-import Clients from "../components/client/Clients";
+import Clients from "../components/client/ListClients";
 import AddClient from "../components/client/AddClient";
 import ModifyClient from "../components/client/ModifyClient";
 import ClientsInfo from "../components/client/ClientsInfo";
@@ -22,10 +22,10 @@ import ListMaterielDemandeRepair from "../components/material/AnnoncementMaterie
 import MaterielsAreparer from "../components/material/TechnicianMaterielsReparation/MaterielsAreparer";
 import ModifyMaterielRepair from "../components/material/TechnicianMaterielsReparation/ModifyMaterielRepair";
 import Home from "../components/home/Home";
-import Users from "../components/user/Users";
+import Users from "../components/user/ListUsers";
 import AddUser from "../components/user/AddUser";
 import ModifyUser from "../components/user/ModifyUser";
-import { Roles } from "../components/role/Roles";
+import { Roles } from "../components/role/ListRoles";
 import { AddRole } from "../components/role/AddRole";
 import { ModifyRole } from "../components/role/ModifyRole";
 import CheckPermissionForRoute from "./CheckPermissions";
@@ -143,7 +143,7 @@ const MainRoutes = () => (
 					/>
 
 					<Route
-						path="/historyUser"
+						path="/History"
 						element={CheckPermissionForRoute('view_material', HistoryUser)}
 					/>
 					<Route
